@@ -1,10 +1,5 @@
 import React, { useState, useEffect, useRef } from "react"
 import TennisGame from "../TennisGame"
-
-import TextField from "@material-ui/core/TextField"
-import Button from "@material-ui/core/Button/Button"
-
-import { withStyles } from "@material-ui/core/styles"
 import {
   Container,
   Title,
@@ -13,6 +8,9 @@ import {
   ButtonContainer,
   TennisResults,
 } from "./Tennis.styles"
+import TextField from "@material-ui/core/TextField"
+import Button from "@material-ui/core/Button/Button"
+import { withStyles } from "@material-ui/core/styles"
 
 const styles = () => ({
   textField: {
@@ -74,6 +72,7 @@ function Tennis(props) {
       return
     }
     setDisabledButton(formValidation)
+    // eslint-disable-next-line
   }, [playerOneName, playerTwoName])
 
   const formValidation = () => {

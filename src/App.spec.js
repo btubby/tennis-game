@@ -60,8 +60,8 @@ describe("tennis game tests", function () {
     const tennisSpeakScore = testCase[2]
 
     // arrange - increment the game score to match the testcase
-    var loops = Math.max(p1TestScore, p2TestScore)
-    for (var i = 0; i < loops; i++) {
+    const loops = Math.max(p1TestScore, p2TestScore)
+    for (let i = 0; i < loops; i++) {
       if (i < p1TestScore) {
         newGame.winRally("p1")
       }
@@ -71,6 +71,7 @@ describe("tennis game tests", function () {
     }
     // act
     const gameScore = newGame.getScore()
+
     // assert
     test(`${p1TestScore}-${p2TestScore} = ${gameScore}`, () => {
       expect(gameScore).toEqual(tennisSpeakScore)
