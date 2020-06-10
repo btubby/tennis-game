@@ -9,20 +9,20 @@ const testCases = [
 
   [1, 0, "15-0"],
   [2, 0, "30-0"],
-  [3, 0, "40-0"],
+  [3, 0, "40-0 GAMEPOINT"],
 
   [0, 1, "0-15"],
   [0, 2, "0-30"],
-  [0, 3, "0-40"],
+  [0, 3, "0-40 BREAKPOINT"],
 
   [1, 1, "15-15"],
   [1, 2, "15-30"],
-  [1, 3, "15-40"],
+  [1, 3, "15-40 BREAKPOINT"],
   [2, 2, "30-30"],
-  [2, 3, "30-40"],
+  [2, 3, "30-40 BREAKPOINT"],
   [2, 1, "30-15"],
-  [3, 1, "40-15"],
-  [3, 2, "40-30"],
+  [3, 1, "40-15 GAMEPOINT"],
+  [3, 2, "40-30 GAMEPOINT"],
 
   // 3 points each (40-40) is 'Deuce'.  Unless clear 2 point lead, this continues
   [3, 3, "40-40"],
@@ -30,10 +30,10 @@ const testCases = [
   [80, 80, "40-40"],
 
   // scores are >= 4 and a player has one point more than their opponent
-  [4, 3, "A-40"],
-  [80, 79, "A-40"],
-  [3, 4, "40-A"],
-  [8, 9, "40-A"],
+  [4, 3, "A-40 GAMEPOINT"],
+  [80, 79, "A-40 GAMEPOINT"],
+  [3, 4, "40-A BREAKPOINT"],
+  [8, 9, "40-A BREAKPOINT"],
 
   // clear win
   [4, 0, `Game ${player1Name}`],

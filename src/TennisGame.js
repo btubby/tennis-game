@@ -39,7 +39,16 @@ export default class TennisGame extends Component {
 
   // Return tennis-speak score in format p1-p2
   simpleScore = () => {
-    return `${scoreMap[this.player1.score]}-${scoreMap[this.player2.score]}`
+    let ret = `${scoreMap[this.player1.score]}-${scoreMap[this.player2.score]}`
+
+    if (this.player1.score === 3) {
+      // GAMEPOINT
+      ret = ret + " GAMEPOINT"
+    } else if (this.player2.score === 3) {
+      ret = ret + " BREAKPOINT"
+      // BREAKPOINT
+    }
+    return ret
   }
 
   // For any 'Deuce' (1st, 2nd or 85th) we want to return '40-40'
@@ -53,11 +62,11 @@ export default class TennisGame extends Component {
     let diff = this.player1.score - this.player2.score
     if (diff === 1) {
       // 'advantage player1'
-      return "A-40"
+      return "A-40 GAMEPOINT"
     }
     if (diff === -1) {
       // 'advantage player2'
-      return "40-A"
+      return "40-A BREAKPOINT"
     }
     if (diff >= 2) {
       return `Game ${this.player1.name}`
