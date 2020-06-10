@@ -1,4 +1,6 @@
-# Tennis game sim
+# Tennis game simulator
+
+Simulate a Tennis Game
 
 https://tennis-game-sim.web.app/
 
